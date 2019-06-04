@@ -1,0 +1,35 @@
+clear all;
+clc;
+timePeriod = [0 35000];
+rocketFire  = [10000 15000];
+THRUST = [-1, 0];
+MASS = 5.97*(10^24);
+inital = [0, 21000000, 2000, 0];
+ip = [0, 21000000];
+iv = [2000, 0];
+rocketPloter(ip, iv, MASS, THRUST, rocketFire, timePeriod);
+
+%timePeriod1 = [0 rocketFire(1)];
+%timePeriod2 = [0 (rocketFire(2)-rocketFire(1))];
+%timePeriod3 = [0 (timePeriod(2) - rocketFire(2))];
+%orbitFunc1 = @(t, x1) (gravitationalFeildAceleration(t, x1, MASS));
+%rocketFunc = @(t, x2) (gravitationalFeildAcelerationAndRocketThrust(t, x2, MASS, THRUST));
+%orbitFunc2 = @(t, x3) (gravitationalFeildAceleration(t, x3, MASS));
+%inital1 = inital;
+%[t, y1] = ode45(orbitFunc1, timePeriod1, inital1);
+%inital2 = [y1(end, 1), y1(end, 2), y1(end, 3), y1(end, 4)];
+%[t, y2] = ode45(rocketFunc, timePeriod2, inital2);
+%inital3 = [y2(end, 1), y2(end, 2), y2(end, 3), y2(end, 4)];
+%[t, y3] = ode45(orbitFunc2, timePeriod3, inital3);
+%plot(y1(:,1), y1(:,2), 'g', y2(:,1), y2(:,2), 'r', y3(:,1), y3(:,2), 'b', 0, 0, 'r*');
+%axis equal
+%x = linspace(0, 10, 50);
+%f = 0*x + x(end);
+%y = x;
+%plot(x, y);
+%hold on;
+%z = x.^2;
+%plot(x, z);
+%plot(x, f);
+%xlim([0 10]);
+%ylim([0 10]);
